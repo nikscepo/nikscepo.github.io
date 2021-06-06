@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gallery</title>
+<link rel="stylesheet" href="slider.css">
+</head>
+<body>
+    <div class="wrap">
+        <div id="arrow-left" class="arrow"></div>
+        <div id="slider">
+            <!-- 1st image-->
+            <div class="slide slide1">
+                <div class="slide-content">
+                    <span></span>
+                </div>
+            </div>
+            <!-- 2nd image-->
+            <div class="slide slide2">
+                <div class="slide-content">
+                    <span></span>
+                </div>
+            </div>
+            <!-- 3rd image-->
+            <div class="slide slide3">
+                <div class="slide-content">
+                    <span></span>
+                </div>
+            </div>
+            <!-- 4th image-->
+            <div class="slide slide4">
+                <div class="slide-content">
+                    <span></span>
+                </div>
+            </div>
+            <!-- 5th image-->
+            <div class="slide slide5">
+                <div class="slide-content">
+                    <span></span>
+                </div>
+            </div>
+            <!--6th image-->
+            <div class="slide slide6">
+                <div class="slide-content">
+                    <span></span>
+                </div>
+            </div>
+            <div class="slide slide7">
+                <div class="slide-content">
+                    <span></span>
+                </div>
+            </div>
+            <div class="slide slide8">
+                <div class="slide-content">
+                    <span></span>
+                </div>
+            </div>
+            <div class="slide slide10">
+                <div class="slide-content">
+                    <span></span>
+                </div>
+            </div>
+            <div class="slide slide11">
+                <div class="slide-content">
+                    <span></span>
+                </div>
+            </div>
+            <div class="slide slide11">
+                <div class="slide-content">
+                    <span></span>
+                </div>
+            </div>
+            <div class="slide slide12">
+                <div class="slide-content">
+                    <span></span>
+                </div>
+            </div>
+            <div class="slide slide12">
+                <div class="slide-content">
+                    <span></span>
+                </div>
+            </div>
+            <div class="slide slide13">
+                <div class="slide-content">
+                    <span></span>
+                </div>
+            </div>
+            <div class="slide slide14">
+                <div class="slide-content">
+                    <span></span>
+                </div>
+            </div>
+            <div class="slide slide15">
+                <div class="slide-content">
+                    <span></span>
+                </div>
+            </div>
+            <div class="slide slide16">
+                <div class="slide-content">
+                    <span></span>
+                </div>
+            </div>
+            <div class="slide slide17">
+                <div class="slide-content">
+                    <span></span>
+                </div>
+            </div>
+            <div class="slide slide9">
+                <div class="slide-content">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div id="arrow-right" class="arrow"></div>
+    </div>
+    <!-- now add some JavaScript Code-->
+   
+<script>
+    let sliderImages = document.querySelectorAll(".slide"),
+     arrowLeft = document.querySelector("#arrow-left"),
+     arrowRight = document.querySelector("#arrow-right"),
+     current = 0;
+   
+   // Clear all images
+   function reset() {
+     for (let i = 0; i < sliderImages.length; i++) {
+       sliderImages[i].style.display = "none";
+     }
+   }
+   
+   // Init slider
+   function startSlide() {
+     reset();
+     sliderImages[0].style.display = "block";
+   }
+   
+   // Show prev
+   function slideLeft() {
+     reset();
+     sliderImages[current - 1].style.display = "block";
+     current--;
+   }
+   
+   // Show next
+   function slideRight() {
+     reset();
+     sliderImages[current + 1].style.display = "block";
+     current++;
+   }
+   
+   // Left arrow click
+   arrowLeft.addEventListener("click", function() {
+     if (current === 0) {
+       current = sliderImages.length;
+     }
+     slideLeft();
+   });
+   
+   // Right arrow click
+   arrowRight.addEventListener("click", function() {
+     if (current === sliderImages.length - 1) {
+       current = -1;
+     }
+     slideRight();
+   });
+   
+   startSlide();
+   
+   </script>
+</body>
+</html>    
